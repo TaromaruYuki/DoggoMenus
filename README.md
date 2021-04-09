@@ -2,6 +2,11 @@
 
 A basic console menu system for Python!
 
+[![PyPI](https://img.shields.io/pypi/v/doggomenus)](https://pypi.org/project/DoggoMenus/)
+[![PyPi - Downloads](https://img.shields.io/pypi/dm/doggomenus)](https://pypi.org/project/DoggoMenus/)
+[![GitHub issues](https://img.shields.io/github/issues/Taromaruu/DoggoMenus)](https://github.com/Taromaruu/DoggoMenus/issues)
+[![License](https://img.shields.io/github/license/Taromaruu/DoggoMenus)](https://github.com/Taromaruu/DoggoMenus/blob/main/LICENSE)
+
 ## Command
 This makes a command for a SelectionMenu
 ```python
