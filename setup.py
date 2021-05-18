@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="DoggoMenus",
-    version="1.0.0",
+    version="1.0.2",
     author="Doggotaco",
     author_email="taromaruyuki@gmail.com",
     description="A basic console menu system for Python!",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Taromaruu/WaifuLabs",
+    url="https://github.com/Taromaruu/DoggoMenus",
     install_requires=["py-getch"],
     packages=setuptools.find_packages(),
     classifiers=[
