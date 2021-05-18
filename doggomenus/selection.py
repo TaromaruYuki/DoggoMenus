@@ -35,7 +35,9 @@ class SelectionMenu:
                 x.is_prev = True
         
         if self.exit_cmd: self.items.append(Command("Exit", self._exit))
-        
+
+    def empty_function(self):
+        pass
 
     def _clear(self):
         if sys.platform == "win32":
@@ -77,6 +79,10 @@ class SelectionMenu:
             raise EOFError()
 
         if a == b'\r':
+            if self.parent:
+                self.parent.on_select()
+            else:
+                self.on_select()
             self._select()
             return
 
@@ -84,9 +90,17 @@ class SelectionMenu:
             b = getch()
 
             if b == b'H': # Up
+                if self.parent:
+                    self.parent.on_move()
+                else:
+                    self.on_move()
                 self._menu_up()
 
             elif b == b'P': # Down
+                if self.parent:
+                    self.parent.on_move()
+                else:
+                    self.on_move()
                 self._menu_down()
 
             """elif b == b'K': # Left
@@ -110,7 +124,10 @@ class SelectionMenu:
     def __str__(self):
         return self.title
 
-    def run(self):
+    def run(self, **kwargs):
+        self.on_select = kwargs.get("on_select", self.empty_function)
+        self.on_move = kwargs.get("on_move", self.empty_function)
+
         while True:
             self._clear()
             self._print_title()
